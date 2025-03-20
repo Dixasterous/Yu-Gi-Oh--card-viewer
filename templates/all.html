@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+    <div class="search-container">
+        <form action="#" method="get" class="search-form">
+            <input type="search" name="query" placeholder="Search for a monster..." class="search-input">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+
+    <div id="monsters">
+        {% for monster in monsters %}
+            <div>
+                <h2 id="{{monster.name}}">{{monster.name}}</h2>
+                <a href="https://yugioh.fandom.com/wiki/{{monster['name']}}" target="_blank" title="View on Yu-Gi-Oh! Wiki">
+                    <img src="{{ monster['card_images'][0]['image_url'] }}" alt="{{ monster['name'] }}" style="max-width: 150px;" loading="lazy">
+                </a>
+                <p><em>{{monster.type}}</em></p>
+                <p><b>Attack</b>: {{monster.atk}} | <b>Defense</b>: {{monster.def}}</p>
+                <p>{{monster.desc}}</p>
+            </div>
+        {% endfor %}
+
+        {% for spell in spells %}
+            <div>
+                <h2 id="{{spell.name}}">{{spell.name}}</h2>
+                <a href="https://yugioh.fandom.com/wiki/{{spell['name']}}" target="_blank" title="View on Yu-Gi-Oh! Wiki">
+                    <img src="{{ spell['card_images'][0]['image_url'] }}" alt="{{ spell['name'] }}" style="max-width: 150px;" loading="lazy">
+                </a>
+                <p><em>{{spell.type}}</em></p>
+                <p>{{spell.desc}}</p>
+            </div>
+        {% endfor %}
+
+        {% for trap in traps %}
+            <div>
+                <h2 id="{{trap.name}}">{{trap.name}}</h2>
+                <a href="https://yugioh.fandom.com/wiki/{{trap['name']}}" target="_blank" title="View on Yu-Gi-Oh! Wiki">
+                    <img src="{{ trap['card_images'][0]['image_url'] }}" alt="{{ trap['name'] }}" style="max-width: 150px;" loading="lazy">
+                </a>
+                <p><em>{{trap.type}}</em></p>
+                <p>{{trap.desc}}</p>
+            </div>
+        {% endfor %}
+        
+    </div>
+        
+    <div id="monsters">
+        {% if query %}
+            {% if monsters|length > 0 or spells|length > 0 or traps|length > 0 %}
+                <p><big>Showing results for <b>{{ query }}</b></big></p>
+            {% else %}
+                <p><big>No result for <b>{{ query }}</b></big></p>
+            {% endif %}
+            <a href="{{ url_for('monsters') }}"><button class="search-button">Back to All</button></a>
+        {% endif %}
+    </div>
+    
+
+{% endblock content %}

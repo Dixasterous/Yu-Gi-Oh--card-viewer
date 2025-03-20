@@ -1,16 +1,6 @@
 /* Global Styling */
 
-.home-background {
-    background-image: url('/static/background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 20px;
-    min-height: 100vh;
-    color: white;
-    text-align: center;
-}
+
 
 main {
     background-image: url('/static/background.png');
@@ -178,7 +168,57 @@ footer {
     justify-content: center; 
     height: 100vh; 
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(95, 65, 65, 0.5); 
     color: white; 
     padding: 20px;
 }
+
+
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    outline: none;
+}
+
+.search-input:focus {
+    border: 2px solid #007BFF;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-button:focus {
+    outline: none;
+}
+

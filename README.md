@@ -1,7 +1,22 @@
-Welcome to the Yu-Gi-Oh! Card Viewer
-This project allows you to view all the Yu-Gi-Oh! cards!
-You can browse through the different categories: Monsters , Spells and Traps
+# Yu-Gi-Oh! Card Viewer
 
-Project Features: Browse Monsters, Spells, and Trap cards, search for specific cards, view detailed card information and access other resources through the Yu-Gi-Oh! Wiki.
+![Home Page](static/view.png)
 
-Project GitHub: GitHub Repo
+A simple web app built using Flask, allowing users to search and view Yu-Gi-Oh! cards (Monsters, Spells, Traps).
+
+## Features
+
+- View cards (Monsters, Spells, Traps) with their images and descriptions.
+- Search for specific cards.
+- Links to the Yu-Gi-Oh! Wiki for further details on each card.
+
+## Libraries Used
+
+- Python
+- Flask
+- Requests (for API calls)
+- HTML/CSS
+
+## Acknowledgments
+
+- Thanks to [Ygoprodeck API](https://ygoprodeck.com/) for providing the card data.
