@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div id="monsters">
+        {% for monster in monsters %}
+            <div>
+                <h2>{{monster.name}}</h2>
+                <a href="https://yugioh.fandom.com/wiki/{{monster['name']}}" target="_blank" title="View on Yu-Gi-Oh! Wiki">
+                    <img src="{{ monster['card_images'][0]['image_url'] }}" alt="{{ monster['name'] }}" style="max-width: 150px;" loading="lazy">
+                </a>
+                <p><em>{{monster.type}}</em></p>
+                <p><b>Attack</b>: {{monster.atk}} | <b>Defense</b>: {{monster.def}}</p>
+                <p>{{monster.desc}}</p>
+            </div>
+        {% endfor %}
+
+{% endblock content %}

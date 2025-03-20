@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div id="spells">
+        {% for spell in spells %}
+            <div>
+                <h2>{{spell.name}}</h2>
+                <a href="https://yugioh.fandom.com/wiki/{{spell['name']}}" target="_blank" title="View on Yu-Gi-Oh! Wiki">
+                    <img src="{{ spell['card_images'][0]['image_url'] }}" alt="{{ spell['name'] }}" style="max-width: 150px;" loading="lazy">
+                </a>
+                <p><em>{{spell.type}}</em></p>
+                <p><b>Attack</b>: {{spell.atk}} | <b>Defense</b>: {{spell.def}}</p>
+                <p>{{spell.desc}}</p>
+            </div>
+        {% endfor %}
+
+{% endblock content %}

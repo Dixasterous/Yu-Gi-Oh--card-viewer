@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div id="traps">
+        {% for trap in traps %}
+            <div>
+                <h2>{{trap.name}}</h2>
+                <a href="https://yugioh.fandom.com/wiki/{{trap['name']}}" target="_blank" title="View on Yu-Gi-Oh! Wiki">
+                    <img src="{{ trap['card_images'][0]['image_url'] }}" alt="{{ trap['name'] }}" style="max-width: 150px;" loading="lazy">
+                </a>
+                <p><em>{{trap.type}}</em></p>
+                <p><b>Attack</b>: {{trap.atk}} | <b>Defense</b>: {{trap.def}}</p>
+                <p>{{trap.desc}}</p>
+            </div>
+        {% endfor %}
+
+{% endblock content %}
